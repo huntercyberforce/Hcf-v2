@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d18">
+<title>Hunter Cyber Force | HCF</title>
+<meta name="description" content="Hunter Cyber Force — We Work For Islam And Bangladesh.">
+<style>
+:root{--bg:#080d18;--panel:#101a2b;--gold:#e7bd62;--text:#f4f5f7;--muted:#a7b1c2}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:10;background:#080d18ed;border-bottom:1px solid #273248;padding:15px 7%;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:21px;font-weight:900;color:var(--gold);letter-spacing:2px}
+nav{display:flex;gap:22px;align-items:center}nav a{font-size:14px;color:var(--muted)}nav a:hover{color:var(--gold)}
+.menu{display:none;background:none;border:0;color:white;font-size:25px}
+.hero{min-height:85vh;display:grid;place-items:center;text-align:center;padding:70px 20px;background:radial-gradient(ellipse at center,#1a2942 0%,#080d18 65%)}
+.hero-content{max-width:850px}.emblem{width:110px;height:110px;margin:0 auto 25px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:34px;font-weight:bold;box-shadow:0 0 35px #e7bd6233}
+h1{font-size:clamp(35px,7vw,68px);line-height:1.1;margin-bottom:18px}.gold{color:var(--gold)}
+.hero p{color:var(--muted);font-size:17px;margin:0 auto 20px}
+.btn{display:inline-block;padding:12px 23px;border-radius:7px;background:var(--gold);color:#111827;font-weight:bold;margin:5px;border:0;cursor:pointer}
+.btn.outline{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+section{padding:75px 7%}.section-title{text-align:center;font-size:32px;margin-bottom:12px}
+.section-sub{text-align:center;color:var(--muted);margin-bottom:35px}
+.stats,.cards,.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.card,.stat{background:var(--panel);border:1px solid #27354b;border-radius:12px;padding:23px}
+.card h3{color:var(--gold);margin-bottom:10px}.card p,.stat p{color:var(--muted);font-size:14px}
+.stat{text-align:center}.stat strong{font-size:28px;color:var(--gold);display:block}
+.about{max-width:850px;margin:auto;text-align:center;color:var(--muted)}.about h2{color:var(--text);margin-bottom:15px}
+.tool-search{display:block;width:100%;max-width:500px;margin:0 auto 25px;padding:13px;border-radius:7px;border:1px solid #35445d;background:#101a2b;color:white}
+.tool-card{transition:.2s}.tool-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+footer{text-align:center;padding:30px 15px;border-top:1px solid #273248;color:var(--muted)}footer strong{color:var(--gold)}
+@media(max-width:700px){nav{display:none;position:absolute;top:65px;left:0;right:0;background:#080d18;flex-direction:column;padding:22px}nav.open{display:flex}.menu{display:block}}
+</style>
+</head>
+<body>
+<header>
+<a class="logo" href="#">HCF ⚡</a>
+<button class="menu" aria-label="Open menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+<nav><a href="#home">Home</a><a href="#tools">Toolkit</a><a href="#about">About</a><a href="#team">Leadership</a><a href="#contact">Contact</a></nav>
+</header>
+<main>
+<section class="hero" id="home"><div class="hero-content">
+<div class="emblem">HCF</div><h1>HUNTER <span class="gold">CYBER FORCE</span></h1>
+<p>We Work For Islam And Bangladesh</p><p>A community focused on cybersecurity awareness, digital safety, research and responsible technology.</p>
+<a class="btn" href="#tools">Explore Toolkit</a>
+<a class="btn outline" href="https://www.facebook.com/profile.php?id=61578965009454" target="_blank" rel="noopener">Official Page</a>
+</div></section>
+<section><h2 class="section-title">OUR <span class="gold">MISSION</span></h2><p class="section-sub">Knowledge • Discipline • Responsibility</p>
+<div class="stats"><div class="stat"><strong>2022</strong><p>Journey Started</p></div><div class="stat"><strong>HCF</strong><p>Hunter Cyber Force</p></div><div class="stat"><strong>∞</strong><p>Keep Learning</p></div></div></section>
+<section id="tools"><h2 class="section-title">CYBER <span class="gold">TOOLKIT</span></h2><p class="section-sub">Browser-based utilities and security resources.</p>
+<input class="tool-search" id="search" placeholder="Search tools..." oninput="filterTools()">
+<div class="cards" id="toolGrid">
+<article class="card tool-card"><h3>🔐 Password Analyzer</h3><p>Check password strength locally in your browser.</p><button class="btn" onclick="passwordCheck()">Open Tool</button></article>
+<article class="card tool-card"><h3>🔄 Base64 Encoder</h3><p>Encode and decode Base64 text.</p><button class="btn" onclick="base64Tool()">Open Tool</button></article>
+<article class="card tool-card"><h3>#️⃣ Hash Generator</h3><p>Generate SHA-256 hashes from text.</p><button class="btn" onclick="hashTool()">Open Tool</button></article>
+<article class="card tool-card"><h3>📝 Text Repeater</h3><p>Repeat text a chosen number of times.</p><button class="btn" onclick="repeatTool()">Open Tool</button></article>
+<article class="card tool-card"><h3>🌐 URL Parser</h3><p>Inspect URL components locally.</p><button class="btn" onclick="urlTool()">Open Tool</button></article>
+<article class="card tool-card"><h3>🛡️ Security Checklist</h3><p>Basic account and device security guidance.</p><button class="btn" onclick="checklist()">Open Tool</button></article>
+</div></section>
+<section id="about"><h2 class="section-title">ABOUT <span class="gold">HCF</span></h2><div class="about"><h2>Hunter Cyber Force</h2>
+<p>Hunter Cyber Force is a community built around cybersecurity awareness, responsible digital skills and technology. Our goal is to encourage safe learning, teamwork and positive contributions to Bangladesh.</p>
+<p style="margin-top:15px">We believe that knowledge comes with responsibility. All security activities should be performed with proper authorization.</p></div></section>
+<section id="team"><h2 class="section-title">OUR <span class="gold">LEADERSHIP</span></h2><p class="section-sub">Hunter Cyber Force Team</p>
+<div class="cards"><div class="card"><h3>Flash Forhad</h3><p>VenomX Flash</p><p>Founder &amp; CEO</p></div><div class="card"><h3>Shariar Bishal</h3><p>Senior Admin</p></div><div class="card"><h3>Rashel Rana</h3><p>Senior Admin</p></div><div class="card"><h3>Junaid H. Usman</h3><p>Co-CEO &amp; Senior Trainer</p></div></div></section>
+<section id="contact"><h2 class="section-title">CONNECT WITH <span class="gold">HCF</span></h2><p class="section-sub">Join our official platforms.</p>
+<div class="links">
+<a class="card" href="https://huntercyberforce.github.io/" target="_blank" rel="noopener"><h3>🌐 Official Website</h3><p>Visit HCF online</p></a>
+<a class="card" href="https://www.facebook.com/profile.php?id=61578965009454" target="_blank" rel="noopener"><h3>📘 Facebook Page</h3><p>Follow official updates</p></a>
+<a class="card" href="https://facebook.com/groups/1856709041977781/" target="_blank" rel="noopener"><h3>👥 Facebook Group</h3><p>Join the community</p></a>
+<a class="card" href="https://t.me/huntercyberforce" target="_blank" rel="noopener"><h3>✈️ Telegram</h3><p>Join our channel</p></a>
+</div></section>
+</main>
+<footer><p><strong>HUNTER CYBER FORCE — HCF</strong></p><p>We Work For Islam And Bangladesh</p><p>Developed by <strong>Flash Forhad</strong></p><p>© 2026 HCF. All rights reserved.</p></footer>
+<script>
+function filterTools(){const q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('.tool-card').forEach(c=>c.style.display=c.innerText.toLowerCase().includes(q)?'block':'none')}
+function passwordCheck(){const p=prompt('Enter a password to analyze (it stays in this browser):');if(p===null)return;let s=0;if(p.length>=8)s++;if(p.length>=12)s++;if(/[A-Z]/.test(p))s++;if(/[a-z]/.test(p))s++;if(/[0-9]/.test(p))s++;if(/[^A-Za-z0-9]/.test(p))s++;alert('Strength: '+(s<=2?'Weak':s<=4?'Moderate':'Strong')+' ('+s+'/6). Never share your real password.')}
+function base64Tool(){const a=prompt('Type encode or decode:');if(!a)return;const t=prompt('Enter text:');if(t===null)return;try{alert(a.toLowerCase()==='encode'?btoa(unescape(encodeURIComponent(t))):decodeURIComponent(escape(atob(t))))}catch(e){alert('Invalid input or operation.')}}
+async function hashTool(){const t=prompt('Enter text to hash:');if(t===null)return;const h=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t));alert([...new Uint8Array(h)].map(b=>b.toString(16).padStart(2,'0')).join(''))}
+function repeatTool(){const t=prompt('Enter text:');if(t===null)return;const n=Math.min(100,Math.max(1,Number(prompt('How many times?'))||1));alert(Array(n).fill(t).join('\n'))}
+function urlTool(){const v=prompt('Enter a URL:');if(!v)return;try{const u=new URL(v);alert('Host: '+u.host+'\nProtocol: '+u.protocol+'\nPath: '+u.pathname)}catch(e){alert('Please enter a valid full URL.')}}
+function checklist(){alert('HCF SECURITY CHECKLIST\n\n1. Use unique passwords.\n2. Enable two-factor authentication.\n3. Keep your device updated.\n4. Avoid unknown APK files and links.\n5. Review account login sessions.\n6. Never test systems without permission.')}
+</script>
+</body>
+</html>
